@@ -70,6 +70,8 @@ public class SecurityConfig {
 
             //Allow Users to post new recipes
             .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.POST, "/recipes")).hasAuthority("USER")
+            .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.PUT, "/recipes")).hasAuthority("USER")
+            .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.DELETE, "/recipes")).hasAuthority("USER")
 
             //Allow Admin to add Categories
             .requestMatchers(mvcMatcherBuilder.pattern(HttpMethod.POST, "/categories")).hasAuthority("ADMIN")
